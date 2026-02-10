@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@
   }
 
   #token-display:empty::before {
-    content: "分词结果将在此处显示...";
+    content: "Tokenization results will appear here...";
     color: #475569;
   }
 
@@ -222,13 +222,13 @@
 
 <div id="loading-overlay">
   <div class="spinner"></div>
-  <p>正在加载 Charabia WASM 模块...</p>
+  <p>Loading Charabia WASM module...</p>
 </div>
 
 <div class="container">
   <header>
     <h1>Charabia Tokenizer Playground</h1>
-    <p>基于 <a href="https://github.com/meilisearch/charabia" target="_blank">meilisearch/charabia</a> 的多语言分词器在线演示</p>
+    <p>Interactive multilingual tokenizer demo powered by <a href="https://github.com/meilisearch/charabia" target="_blank">meilisearch/charabia</a></p>
   </header>
 
   <div class="legend">
@@ -240,12 +240,12 @@
   </div>
 
   <div class="input-section">
-    <label for="input-text">输入文本</label>
-    <textarea id="input-text" placeholder="在此输入任意语言的文本，例如：&#10;The quick brown fox jumps over the lazy dog.&#10;日本語のテキストもサポートされています。&#10;中文分词效果也可以在这里测试。&#10;한국어도 지원합니다."></textarea>
+    <label for="input-text">Input Text</label>
+    <textarea id="input-text" placeholder="Type or paste text in any language, e.g.:&#10;The quick brown fox jumps over the lazy dog.&#10;中文分词效果也可以在这里测试。&#10;Ceci est un exemple en français."></textarea>
   </div>
 
   <div class="output-section">
-    <label>分词结果 <span class="stats" id="stats"></span></label>
+    <label>Tokenization Result <span class="stats" id="stats"></span></label>
     <div id="token-display"></div>
   </div>
 </div>
@@ -319,7 +319,7 @@ async function main() {
 }
 
 main().catch(err => {
-  overlay.querySelector('p').textContent = '加载失败: ' + err.message;
+  overlay.querySelector('p').textContent = 'Failed to load: ' + err.message;
   console.error(err);
 });
 </script>
