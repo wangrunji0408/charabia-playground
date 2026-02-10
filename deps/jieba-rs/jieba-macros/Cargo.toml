@@ -1,0 +1,18 @@
+[package]
+name = "jieba-macros"
+version = "0.8.0"
+
+categories = ["text-processing"]
+description = "Collections of proc-macro for jieba-rs"
+keywords = ["nlp", "chinese", "segmentation"]
+
+edition.workspace = true
+license.workspace = true
+readme.workspace = true
+repository.workspace = true
+
+[lib]
+proc-macro = true
+
+[dependencies]
+phf_codegen = { workspace = true }
